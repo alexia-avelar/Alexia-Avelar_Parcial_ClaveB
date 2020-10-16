@@ -41,36 +41,34 @@ volumen: (4/3)*pi*r^3
 """
 
 # start-->
-esferaDict= {
-        "perimetro",
-        "area",
-        "volumen"
-    }
-
 def definicionEsfera():
-    result = 0
+    perimetro = obtenerPerimetro()
+    area= obtenerArea()
+    volumen= obtenerVolumen()
+    esferaDict= {
+        "perimetro": perimetro,
+        "area": area,
+        "volumen": volumen
+    }
     return esferaDict
 
-def obtenerPerimetro(radio):
+def obtenerPerimetro():
     radio = 12
     result = 0
     perimetro = 2*math.pi*radio
     return perimetro
-    esferaDict["perimetro"] = perimetro
 
-def obtenerArea(radio):
+def obtenerArea():
     radio = 12
     result = 0
-    area=4*math.pi*radio^2
+    area=4*math.pi*(radio**2)
     return area
-    esferaDict["area"] = area
 
-def obtenerVolumen(radio):
+def obtenerVolumen():
     result = 0
     radio = 12
-    volumen = (4/3)*math.pi*radio^3
+    volumen = (4/3)*math.pi*(radio**3)
     return volumen
-    esferaDict["volumen"] = volumen
 
 """
 ***************************************************************
@@ -83,8 +81,30 @@ el ejercicio numero 3 convertirlo en una clase
 # start-->
 class Esfera:
     def definicionEsfera(self):
-        return 0
+        perimetro = self.obtenerPerimetro()
+        area= self.obtenerArea()
+        volumen= self.obtenerVolumen()
+        esferaDict= {
+            "perimetro": perimetro,
+            "area": area,
+            "volumen": volumen
+        }
+        return esferaDict
+    
+    def obtenerPerimetro(self):
+        radio = 12
+        perimetro = 2*math.pi*radio
+        return perimetro
 
+    def obtenerArea(self):
+        radio = 12
+        area=4*math.pi*(radio**2)
+        return area
+
+    def obtenerVolumen(self):
+        radio = 12
+        volumen = (4/3)*math.pi*(radio**3)
+        return volumen
 
 """
 ***************************************************************
@@ -126,4 +146,4 @@ github_<nombre>_<codigo>.txt y subirlo a moodle
 
 # github url-->
 def getGithubUrl():
-    return ""
+    return "https://github.com/alexia-avelar/Alexia-Avelar_Parcial_ClaveB.git"
